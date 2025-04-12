@@ -3,41 +3,119 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Portfólio Vítor</title>
-    <link rel="stylesheet" href="style.css">
+    <title>Vito | Porfólio</title>
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <header>
-        <h1>Vítor Cristofoleti</h1>
-        <p>Programador Front End | Criador de Experiências Digitais</p>
-    </header>
-    
-    <section id="sobre">
-        <p>Sou um desenvolvedor apaixonado por tecnologia e inovação. Trabalho com HTML, Figma e CSS para criar experiências interativas e intuitivas na web.</p>
-    </section>
-    
-    <section id="projetos">
-        <h2>Meus Projetos</h2>
-        <div class="projeto">
-            <h3>Projeto PetCareConnect</h3>
-            <p>Protótipo de um aplicativo para auxílio da causa animal, oferece uma interface intuitiva e que usa de conceitos<br>
-                como webcolors e plataforma “Figma” para sua realização.
-            </p>
-            <a href="https://www.figma.com/proto/mSUwC4IyO9P4d0VGe0aIaq/Untitled?page-id=0%3A1&node-id=1-2&node-type=canvas&viewport=-84%2C-11791%2C0.43&t=fEAYdjQIGcqxkaHw-1&scaling=contain&content-scaling=fixed&starting-point-node-id=1%3A2" target="_blank">Visualizar Projeto</a>
-        </div>
-        <div class="projeto">
-            <h3>Currículo</h3>
-            <p>Abaixo segue o link do meu Currículo</p>
-            <a href="https://docs.google.com/document/d/e/2PACX-1vQV3UB0L3kRKetEY70JNbBeK2IVbfaWDbpBbvkT-flOqDMCpvINumuHNx5oX3UAJHzc-dBqHlS2sH2c/pub" target="_blank">Currículo</a>
-        </div>
-    </section>
-    
-    <section id="contato">
-        <h2>Contato</h2>
-        <p>Email:<a href="mailto:vcristofoletidesouza@gmail.com">vcristofoletidesouza@gmail.com</a></p>
-        <p>LinkedIn: <a href="www.linkedin.com/in/vitorcristofoleti" target="_blank">www.linkedin.com/in/vitorcristofoleti</a></p>
+    <div class="particulas"></div>
 
-        <p>GitHub: <a href="https://github.com/VitokkjDev" target="_blank">https://github.com/VitokkjDev</a></p>
+
+    <nav class="navegacao">
+        <ul class="menu">
+            <li>
+                <a href="#inicio" class="menu-link">Início</a>
+            </li>
+            <li>
+                <a href="#sobre" class="menu-link">Sobre</a>
+            </li>
+            <li>
+                <a href="#projetos" class="menu-link">Projetos</a>
+            </li>
+            <li>
+                <a href="#contatos" class="menu-link">Contato</a>
+            </li>
+        </ul>
+
+    </nav>
+
+    <main id="inicio" class="cabecalho">
+        <img src="./img/emolgaport.png" alt="Foto do Vítor Cristofoleti" class="perfil-foto">
+        <h1>Vítor Cristofoleti</h1>
+        <p class="cabecalho-sub-titulo">Desenvolvedor Web</p>
+    </main>
+
+    <section id="sobre" class="sobre">
+        <h2 class="sobre-titulo">Sobre mim</h2>
+        <div class="sobre-texto">
+            <p class="sobre-paragrafo">
+                Sou Técnico em Automação Industrial, com uma base sólida em eletrônica, programação e bancos de dados (SQL). Atualmente, estou cursando Análise e Desenvolvimento de Sistemas, além de Programação Web pelo IFSul, onde também concluí um curso de Lógica de Programação. Busco constantemente evoluir na área de tecnologia e desenvolvimento, e tenho interesse especial em soluções eficientes e bem estruturadas
+
+
+            </p>
+        </div>
     </section>
+
+    <section id="projetos" class="projetos">
+        <h2 class="projetos-titulo">Meus Projetos</h2>
+        <div class="projetos-texto">
+
+            <div class="projetos-card">
+                <img src="./img/dash.png" class="projetos-imagem">
+                <h3 class="info-projetos">Dashboard em Python</h3>
+                <p class="paragrafo-projetos">Dashboard de analise de vendas, feito em Python utilizando as bibliotecas dash, pandas e openpyxl</p>
+            </div>
+
+            <div class="projetos-card">
+                <img src="./img/poke2.png" class="projetos-imagem">
+                <h3 class="info-projetos">Card Game em Python</h3>
+                <p class="paragrafo-projetos">Projeto de CardGame que utilizará back end e front end, utilizará das bibliotecas flask, pyscript, python, html e css</p>
+            </div>
+               
+        </div>
+    </section>
+
+    <section id="contatos" class="contatos">
+        <h2 class="contatos-titulo">Entre em Contato</h2>
+        
+        <!-- Alerta visual -->
+        <div id="mensagem-sucesso" style="display: none; color: var(--claro); background: #4caf50; padding: 1rem; margin-bottom: 1rem; border-radius: 8px; text-align: center;">
+          Mensagem enviada com sucesso!
+        </div>
+      
+        <form action="https://formspree.io/f/xblgwgby" method="POST" class="formulario-contato" id="form-contato">
+          <div class="grupo-form">
+            <input type="text" name="nome" placeholder="Nome" class="campo-form" required>
+          </div>
+          <div class="grupo-form">
+            <input type="email" name="email" placeholder="Email" class="campo-form" required>
+          </div>
+          <div class="grupo-form">
+            <textarea name="mensagem" placeholder="Digite sua mensagem" class="campo-form" rows="5" required></textarea>
+          </div>
+          <button type="submit" class="botao-form">Enviar Email</button>
+        </form>
+      </section>
+      
+    
+
+    </section>
+
+    <script>
+        const form = document.getElementById("form-contato");
+        const mensagem = document.getElementById("mensagem-sucesso");
+      
+        form.addEventListener("submit", function(e) {
+          e.preventDefault(); // impede o envio padrão
+      
+          const data = new FormData(form);
+      
+          fetch(form.action, {
+            method: "POST",
+            body: data,
+            headers: {
+              'Accept': 'application/json'
+            }
+          }).then(response => {
+            if (response.ok) {
+              mensagem.style.display = "block";
+              form.reset(); // limpa o formulário "resetar"
+            } else {
+              alert("Houve um problema ao enviar sua mensagem. Tente novamente.");
+            }
+          }).catch(error => {
+            alert("Erro ao enviar. Verifique sua conexão.");
+          });
+        });
+      </script>
 </body>
 </html>
